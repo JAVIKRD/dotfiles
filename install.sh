@@ -25,6 +25,7 @@ declare -A DEP_PACKAGES=(
   [nmcli]=networkmanager
   [blueman-manager]=blueman
   [pavucontrol]=pavucontrol
+  [hyprpaper]=hyprpaper
 )
 
 check_deps() {
@@ -79,11 +80,31 @@ install_configs() {
   done
 }
 
+install_wallpapers() {
+  local src="$DOTFILES_DIR/wallpapers"
+  local dst="$HOME/Pictures/Wallpapers"
+  if [ ! -d "$src" ]; then
+    echo "[!] No hay carpeta de wallpapers, saltando"
+    return
+  fi
+  mkdir -p "$dst"
+  cp -r "$src"/* "$dst"/
+  echo "[+] Wallpapers copiados a $dst"
+
+  # Reemplazar el placeholder __HOME__ por el HOME real de este usuario
+  local hyprpaper="$CONFIG_DIR/hypr/hyprpaper.conf"
+  if [ -f "$hyprpaper" ]; then
+    sed -i "s|__HOME__|$HOME|g" "$hyprpaper"
+    echo "[+] Ruta de wallpaper ajustada en hyprpaper.conf"
+  fi
+}
+
 main() {
   echo "Instalando dotfiles desde $DOTFILES_DIR"
   echo ""
   check_deps
   install_configs
+  install_wallpapers
   echo ""
   echo "Listo. Si algo ya existía, quedó respaldado en: $BACKUP_DIR"
   echo "Reinicia Hyprland/waybar para aplicar los cambios."
