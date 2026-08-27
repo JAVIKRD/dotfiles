@@ -1,0 +1,192 @@
+/* ================================================
+   WAYBAR — MINIMAL DARK
+   ================================================ */
+
+* {
+  border: none;
+  border-radius: 0;
+  font-family: "JetBrainsMono Nerd Font", monospace;
+  font-size: 12px;
+  min-height: 0;
+}
+
+window#waybar {
+  background: transparent;
+  color: #ebdbb2;
+}
+
+.modules-left,
+.modules-center,
+.modules-right {
+  background: rgba(15, 15, 15, 0.85);
+  border-radius: 8px;
+  margin: 0 2px;
+  padding: 0 8px;
+}
+
+/* ── WORKSPACES ── */
+#workspaces {
+  padding: 0 4px;
+}
+
+#workspaces button {
+  padding: 0 5px;
+  color: #504945;
+  background: transparent;
+  font-size: 10px;
+  min-width: 0;
+  transition: all 0.15s ease;
+}
+
+#workspaces button.active {
+  color: #ebdbb2;
+  font-size: 12px;
+}
+
+#workspaces button.occupied {
+  color: #7c6f64;
+}
+
+#workspaces button:hover {
+  background: transparent;
+  color: #a89984;
+  box-shadow: none;
+}
+
+/* ── CLOCK ── */
+#clock {
+  color: #a89984;
+  font-size: 12px;
+  padding: 4px 8px;
+}
+
+/* ── UPDATES ── */
+#custom-updates {
+  color: #7c6f64;
+  padding: 4px 6px;
+}
+
+/* ── AUDIO ── */
+#pulseaudio {
+  color: #a89984;
+  padding: 4px 6px;
+}
+
+#pulseaudio.muted {
+  color: #504945;
+}
+
+/* ── NETWORK ── */
+#network {
+  color: #a89984;
+  padding: 4px 8px;
+  border-radius: 6px;
+  transition: all 0.15s ease;
+}
+#network:hover {
+  background: rgba(125, 174, 163, 0.12);
+  color: #7daea3;
+}
+#network.disconnected {
+  color: #504945;
+}
+#network.disconnected:hover {
+  color: #ea6962;
+  background: rgba(234, 105, 98, 0.1);
+}
+#network.linked {
+  color: #d8a657;
+}
+
+/* ── BLUETOOTH ── */
+#bluetooth {
+  color: #a89984;
+  padding: 4px 6px;
+}
+
+#bluetooth.off {
+  color: #504945;
+}
+
+/* ── BATTERY ── */
+#battery {
+  color: #a89984;
+  padding: 4px 8px;
+}
+
+#battery.warning:not(.charging) {
+  color: #d8a657;
+}
+
+#battery.critical:not(.charging) {
+  color: #ea6962;
+  animation: blink 0.6s linear infinite;
+}
+
+/* ── TRAY ── */
+#tray {
+  padding: 4px 6px;
+}
+
+#tray > .passive {
+  -gtk-icon-effect: dim;
+}
+
+/* ── TOOLTIP ── */
+tooltip {
+  background: #1d2021;
+  border: 1px solid #3c3836;
+  border-radius: 6px;
+  color: #ebdbb2;
+}
+
+@keyframes blink {
+  to {
+    opacity: 0.3;
+  }
+}
+
+#taskbar button {
+  padding: 0 4px;
+  background: transparent;
+  border: none;
+  border-radius: 6px;
+  transition: all 0.15s ease;
+}
+#taskbar button.active {
+  background: rgba(235, 219, 178, 0.1);
+}
+#taskbar button:hover {
+  background: rgba(235, 219, 178, 0.08);
+}
+
+#taskbar button tooltip {
+  background: #1d2021;
+  color: #ebdbb2;
+}
+
+#custom-arch {
+  color: #7daea3;
+  font-size: 16px;
+  padding: 4px 10px;
+}
+
+#custom-arch:hover {
+  color: #a9b665;
+  background: rgba(125, 174, 163, 0.12);
+  border-radius: 6px;
+}
+
+#custom-vpn {
+  color: #a9b665;
+  padding: 4px 8px;
+}
+
+#custom-vpn.novpn {
+  color: #504945;
+}
+
+#custom-target {
+  color: #ea6962;
+  padding: 4px 8px;
+}

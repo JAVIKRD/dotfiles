@@ -1,0 +1,110 @@
+##################################################
+#   DUNST CONFIG — GRUVBOX MATERIAL DARK
+##################################################
+
+[global]
+    monitor = 0
+    follow = mouse
+    width = (200, 380)
+    height = 120
+    origin = top-right
+    offset = 12x48
+    scale = 0
+    notification_limit = 5
+
+    progress_bar = true
+    progress_bar_height = 8
+    progress_bar_frame_width = 1
+    progress_bar_min_width = 150
+    progress_bar_max_width = 300
+    progress_bar_corner_radius = 4
+
+    indicate_hidden = yes
+    transparency = 8
+    separator_height = 2
+    padding = 10
+    horizontal_padding = 12
+    text_icon_padding = 10
+    frame_width = 1
+    frame_color = "#3c3836"
+    gap_size = 6
+    separator_color = frame
+    sort = yes
+    idle_threshold = 120
+
+    font = JetBrainsMono Nerd Font 11
+    line_height = 0
+    markup = full
+    format = "<b>%s</b>\n%b"
+    alignment = left
+    vertical_alignment = center
+    show_age_threshold = 60
+    ellipsize = middle
+    ignore_newline = no
+    stack_duplicates = true
+    hide_duplicate_count = false
+    show_indicators = yes
+
+    icon_theme = Papirus-Dark
+    enable_recursive_icon_lookup = true
+    icon_position = left
+    min_icon_size = 32
+    max_icon_size = 48
+
+    sticky_history = yes
+    history_length = 20
+    dmenu = /usr/bin/wofi -p dunst
+
+    browser = /usr/bin/xdg-open
+    always_run_script = true
+    title = Dunst
+    class = Dunst
+    corner_radius = 8
+    ignore_dbusclose = false
+    force_xwayland = false
+    force_xinerama = false
+
+    mouse_left_click = close_current
+    mouse_middle_click = do_action, close_current
+    mouse_right_click = close_all
+
+[experimental]
+    per_monitor_dpi = false
+
+# ── URGENCY LEVELS ─────────────────────────────
+[urgency_low]
+    background = "#1d2021"
+    foreground = "#a89984"
+    highlight = "#a9b665"
+    frame_color = "#3c3836"
+    timeout = 4
+    icon = dialog-information
+
+[urgency_normal]
+    background = "#282828"
+    foreground = "#ebdbb2"
+    highlight = "#a9b665"
+    frame_color = "#504945"
+    timeout = 6
+    icon = dialog-information
+
+[urgency_critical]
+    background = "#3c1f1e"
+    foreground = "#ea6962"
+    highlight = "#ea6962"
+    frame_color = "#ea6962"
+    timeout = 0
+    icon = dialog-error
+
+# ── APP RULES ──────────────────────────────────
+[volume]
+    appname = "Volume"
+    highlight = "#7daea3"
+
+[spotify]
+    appname = "Spotify"
+    highlight = "#a9b665"
+
+[discord]
+    appname = "discord"
+    highlight = "#d3869b"

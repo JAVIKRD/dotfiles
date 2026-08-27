@@ -1,0 +1,73 @@
+/* ================================================
+   WOFI STYLE — GRUVBOX MATERIAL DARK
+   ================================================ */
+
+window {
+    margin: 0;
+    border: 1px solid #3c3836;
+    border-radius: 10px;
+    background-color: rgba(29, 32, 33, 0.95);
+    font-family: "JetBrainsMono Nerd Font";
+    font-size: 14px;
+    color: #ebdbb2;
+}
+
+#input {
+    border: none;
+    border-bottom: 1px solid #3c3836;
+    border-radius: 10px 10px 0 0;
+    background-color: rgba(40, 40, 40, 0.95);
+    color: #ebdbb2;
+    padding: 10px 14px;
+    margin: 0;
+    font-size: 14px;
+    outline: none;
+}
+
+#input:focus {
+    border-bottom: 1px solid #a9b665;
+    box-shadow: none;
+}
+
+#input image {
+    color: #a89984;
+    padding-right: 6px;
+}
+
+#inner-box {
+    background: transparent;
+    padding: 4px;
+}
+
+#outer-box {
+    background: transparent;
+}
+
+#scroll {
+    background: transparent;
+}
+
+#text {
+    color: #ebdbb2;
+    padding: 2px 0;
+}
+
+#entry {
+    padding: 6px 12px;
+    border-radius: 6px;
+    margin: 2px 4px;
+    background: transparent;
+}
+
+#entry:selected {
+    background: rgba(169, 182, 101, 0.18);
+    outline: none;
+}
+
+#entry:selected #text {
+    color: #a9b665;
+}
+
+#entry image {
+    margin-right: 8px;
+}

@@ -1,0 +1,4 @@
+"modules-center": [
+    "hyprland/workspaces",
+    "wlr/taskbar"
+],

@@ -1,0 +1,34 @@
+# ── STARSHIP CONFIG — lexo0x00 ───────────────────
+format = "$username$hostname $directory$status$character"
+
+[username]
+show_always = true
+style_user = "green"
+format = "[$user]($style)"
+
+[hostname]
+ssh_only = false
+style = "white"
+format = "[@$hostname]($style)"
+
+[directory]
+style = "white"
+truncation_length = 3
+truncate_to_repo = false
+format = "[$path]($style)"
+
+[status]
+disabled = false
+style = "red"
+format = "[$status]($style) "
+
+[character]
+success_symbol = "[>](white)"
+error_symbol = "[>](red)"
+
+[python]
+disabled = true
+[git_branch]
+disabled = true
+[git_status]
+disabled = true

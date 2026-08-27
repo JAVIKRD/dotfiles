@@ -1,0 +1,311 @@
+#    Lex0x00 Arch Linux Setup
+##################################################
+#
+
+# ── NVIDIA ──
+env = LIBVA_DRIVER_NAME,nvidia
+env = __GLX_VENDOR_LIBRARY_NAME,nvidia
+env = NVD_BACKEND,direct
+env = ELECTRON_OZONE_PLATFORM_HINT,auto
+env = __NV_PRIME_RENDER_OFFLOAD,1
+env = __NV_PRIME_RENDER_OFFLOAD_PROVIDER,NVIDIA-G0
+env = __VK_LAYER_NV_optimus,NVIDIA_only
+env = AQ_DRM_DEVICES,/dev/dri/card1:/dev/dri/card0
+
+# ── AUTOSTART ──────────────────────────────────
+exec-once = waybar
+exec-once = hyprpaper
+exec-once = dunst
+exec-once = hypridle
+exec-once = systemd-run --user hyprpolkitagent
+exec-once = wl-paste --type text --watch cliphist store
+exec-once = wl-paste --type image --watch cliphist store
+exec-once = dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
+exec-once = pkill -f xwaylandvideobridge
+
+# ── MONITOR ────────────────────────────────────
+# Ajusta según tu monitor: monitor=name,resolution@hz,position,scale
+monitor = ,preferred,auto,1
+
+# ── INPUT ──────────────────────────────────────
+input {
+    kb_layout = us
+    kb_options = grp:alt_shift_toggle
+    follow_mouse = 1
+    sensitivity = 0
+    accel_profile = flat
+
+    touchpad {
+        natural_scroll = true
+        tap-to-click = true
+        disable_while_typing = true
+    }
+}
+
+# ── GENERAL ────────────────────────────────────
+general {
+    gaps_in = 4
+    gaps_out = 8
+    border_size = 2
+
+    # Gruvbox Material Dark palette
+    col.active_border = rgb(a9b665) rgb(d8a657) 45deg
+    col.inactive_border = rgb(3c3836)
+
+    layout = dwindle
+    resize_on_border = true
+    allow_tearing = false
+}
+
+# ── DECORATION ─────────────────────────────────
+decoration {
+    rounding = 6
+
+    blur {
+        enabled = true
+        size = 6
+        passes = 3
+        noise = 0.02
+        contrast = 1.0
+        brightness = 0.85
+    }
+
+    shadow {
+        enabled = true
+        range = 20
+        render_power = 3
+        color = rgba(1d2021dd)
+        color_inactive = rgba(1d202188)
+    }
+
+    dim_inactive = true
+    dim_strength = 0.08
+}
+
+# ── ANIMATIONS ─────────────────────────────────
+animations {
+    enabled = true
+
+    bezier = ease, 0.25, 0.1, 0.25, 1.0
+    bezier = easeOut, 0.0, 0.0, 0.2, 1.0
+    bezier = easeInOut, 0.4, 0.0, 0.6, 1.0
+    bezier = overshot, 0.05, 0.9, 0.1, 1.05
+    bezier = spring, 0.68, -0.55, 0.27, 1.55
+
+    animation = windows, 1, 4, overshot, slide
+    animation = windowsOut, 1, 3, easeOut, slide
+    animation = windowsMove, 1, 4, easeInOut
+    animation = border, 1, 8, ease
+    animation = borderangle, 1, 12, ease, loop
+    animation = fade, 1, 4, easeOut
+    animation = workspaces, 1, 5, overshot, slidefadevert 20%
+    animation = specialWorkspace, 1, 4, easeOut, slidevert
+}
+
+# ── LAYOUTS ────────────────────────────────────
+dwindle {
+    preserve_split = true
+    smart_split = false
+    smart_resizing = true
+}
+
+master {
+    new_status = slave
+    new_on_top = false
+    mfact = 0.55
+}
+
+# ── MISC ───────────────────────────────────────
+misc {
+    force_default_wallpaper = 0
+    disable_hyprland_logo = true
+    disable_splash_rendering = true
+    mouse_move_enables_dpms = true
+    key_press_enables_dpms = true
+    vrr = 0
+    focus_on_activate = true
+    animate_manual_resizes = true
+    animate_mouse_windowdragging = true
+}
+
+# ── WINDOW RULES ───────────────────────────────
+
+# Floating windows
+windowrule = match:class ^(pavucontrol)$, float on
+windowrule = match:class ^(blueman-manager)$, float on
+windowrule = match:class ^(nm-connection-editor)$, float on
+windowrule = match:class ^(org.gnome.Calculator)$, float on
+windowrule = match:class ^(imv)$, float on
+windowrule = match:class ^(mpv)$, float on
+windowrule = match:title ^(Picture-in-Picture)$, float on
+windowrule = match:class ^(xdg-desktop-portal-gtk)$, float on
+windowrule = match:class ^(file-roller)$, float on
+windowrule = match:title ^(Keybinds)$, float on
+windowrule = match:title ^(Keybinds)$, size 800 600
+windowrule = match:title ^(Keybinds)$, center on
+
+# Sizes for floats
+windowrule = match:class ^(pavucontrol)$, size 800 500
+windowrule = match:class ^(blueman-manager)$, size 900 600
+windowrule = match:class ^(pavucontrol)$, center on
+windowrule = match:class ^(blueman-manager)$, center on
+
+# Opacity
+#windowrule = match:class ^(Alacritty)$, opacity 0.92 0.85
+#windowrule = match:class ^(kitty)$, opacity 0.92 0.85
+#windowrule = match:class ^(Code)$, opacity 0.95 0.90
+#windowrule = match:class ^(neovide)$, opacity 0.95 0.90
+
+# Rounding para terminal
+windowrule = match:class ^(Alacritty)$, rounding 4
+
+# Idle inhibit for media
+
+# Picture-in-picture
+windowrule = match:title ^(Picture-in-Picture)$, pin on
+
+# Workspace assignments
+windowrule = match:class ^(firefox)$, workspace 2
+windowrule = match:class ^(brave-browser)$, workspace 2
+windowrule = match:class ^(Code)$, workspace 3
+windowrule = match:class ^(neovide)$, workspace 3
+windowrule = match:class ^(discord)$, workspace 4
+windowrule = match:class ^(WebCord)$, workspace 4
+# ── ENVIRONMENT ────────────────────────────────
+env = XCURSOR_SIZE,24
+env = XCURSOR_THEME,Bibata-Modern-Classic
+env = GTK_THEME,Gruvbox-Dark
+env = QT_QPA_PLATFORM,wayland
+env = QT_QPA_PLATFORMTHEME,gtk2
+env = QT_WAYLAND_DISABLE_WINDOWDECORATION,1
+env = GDK_BACKEND,wayland,x11
+env = SDL_VIDEODRIVER,wayland
+env = CLUTTER_BACKEND,wayland
+env = XDG_CURRENT_DESKTOP,Hyprland
+env = XDG_SESSION_TYPE,wayland
+env = XDG_SESSION_DESKTOP,Hyprland
+env = MOZ_ENABLE_WAYLAND,1
+
+# ── VARIABLES ──────────────────────────────────
+$mod = SUPER
+$term = kitty
+$menu = wofi --show drun
+$browser = firefox
+$filemanager = thunar
+$editor = code
+
+# ── KEYBINDINGS ────────────────────────────────
+# Sistema
+bind = $mod, Return, exec, $term
+bind = $mod, D, exec, $menu
+bind = $mod, B, exec, $browser
+bind = $mod, E, exec, $filemanager
+bind = $mod SHIFT, Return, exec, $editor
+
+# Hyprland controls
+bind = $mod, Q, killactive
+bind = $mod SHIFT, E, exit
+bind = $mod, F, fullscreen, 0
+bind = $mod SHIFT, F, fullscreen, 1
+bind = $mod, Space, togglefloating
+bind = $mod, P, pseudo
+bind = $mod, J, layoutmsg, togglesplit
+bind = $mod, Tab, cyclenext
+
+# Screenshots
+bind = , Print,              exec, grimblast copy area
+bind = SHIFT, Print,         exec, grimblast copy output
+bind = $mod, Print,          exec, grimblast copysave area ~/Pictures/Screenshots/$(date +%Y%m%d_%H%M%S).png
+bind = CTRL ALT, S,        exec, grimblast copysave area ~/Pictures/Screenshots/$(date +%Y%m%d_%H%M%S).png
+# Portapapeles
+bind = $mod, V, exec, cliphist list | wofi --dmenu | cliphist decode | wl-copy
+
+# Bloquear pantalla
+bind = $mod, M, exec, hyprlock
+
+# Notificaciones
+bind = $mod, N, exec, dunstctl close-all
+bind = $mod SHIFT, N, exec, dunstctl history-pop
+
+# ── FOCO (vim-style) ───────────────────────────
+bind = $mod, h, movefocus, l
+bind = $mod, l, movefocus, r
+bind = $mod, k, movefocus, u
+bind = $mod, j, movefocus, d
+
+# ── MOVER VENTANAS ─────────────────────────────
+bind = $mod SHIFT, h, movewindow, l
+bind = $mod SHIFT, l, movewindow, r
+bind = $mod SHIFT, k, movewindow, u
+bind = $mod SHIFT, j, movewindow, d
+
+# ── RESIZE ─────────────────────────────────────
+bind = $mod CTRL, h, resizeactive, -40 0
+bind = $mod CTRL, l, resizeactive, 40 0
+bind = $mod CTRL, k, resizeactive, 0 -40
+bind = $mod CTRL, j, resizeactive, 0 40
+
+# ── WORKSPACES (1–10) ──────────────────────────
+bind = $mod, 1, workspace, 1
+bind = $mod, 2, workspace, 2
+bind = $mod, 3, workspace, 3
+bind = $mod, 4, workspace, 4
+bind = $mod, 5, workspace, 5
+bind = $mod, 6, workspace, 6
+bind = $mod, 7, workspace, 7
+bind = $mod, 8, workspace, 8
+bind = $mod, 9, workspace, 9
+bind = $mod, 0, workspace, 10
+
+bind = $mod SHIFT, 1, movetoworkspace, 1
+bind = $mod SHIFT, 2, movetoworkspace, 2
+bind = $mod SHIFT, 3, movetoworkspace, 3
+bind = $mod SHIFT, 4, movetoworkspace, 4
+bind = $mod SHIFT, 5, movetoworkspace, 5
+bind = $mod SHIFT, 6, movetoworkspace, 6
+bind = $mod SHIFT, 7, movetoworkspace, 7
+bind = $mod SHIFT, 8, movetoworkspace, 8
+bind = $mod SHIFT, 9, movetoworkspace, 9
+bind = $mod SHIFT, 0, movetoworkspace, 10
+
+# Scratchpad
+bind = $mod, S, togglespecialworkspace, magic
+bind = $mod SHIFT, S, movetoworkspace, special:magic
+
+# Scroll entre workspaces
+bind = $mod, mouse_down, workspace, e+1
+bind = $mod, mouse_up, workspace, e-1
+
+# ── MOUSE ──────────────────────────────────────
+bindm = $mod, mouse:272, movewindow
+bindm = $mod, mouse:273, resizewindow
+
+# ── AUDIO ──────────────────────────────────────
+bindel = , XF86AudioRaiseVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+
+bindel = , XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-
+bindl = , XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
+bindl = , XF86AudioMicMute, exec, wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle
+
+# ── BRILLO ─────────────────────────────────────
+bindel = , XF86MonBrightnessUp, exec, brightnessctl set 5%+
+bindel = , XF86MonBrightnessDown, exec, brightnessctl set 5%-
+
+# ── MEDIA ──────────────────────────────────────
+bindl = , XF86AudioPlay, exec, playerctl play-pause
+bindl = , XF86AudioNext, exec, playerctl next
+bindl = , XF86AudioPrev, exec, playerctl previous
+
+# ── s ──────────────────────────────────────
+bind = $mod, F1, exec, ~/.config/hypr/scripts/cheatsheet.sh
+
+bind = $mod, W, exec, ~/.config/hypr/scripts/network.sh
+
+# ── AUTOSTART ──
+exec-once = swww-daemon
+exec-once = swww img /home/javikrd/Pictures/Wallpapers/gruvbox_tux.png --transition-type wipe --transition-angle 30
+
+
+# ── DEBUG ──────────────────────────────────────
+debug {
+    vfr = true
+}

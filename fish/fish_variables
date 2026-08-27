@@ -1,0 +1,7 @@
+# This file contains fish universal variable definitions.
+# VERSION: 3.0
+SETUVAR --export IP:10\x2e129\x2e21\x2e195
+SETUVAR --export --path PYTHONPATH:/home/lexo/WPSPin/dist\x2dpackages
+SETUVAR --export TARGET:10\x2e10\x2e10\x2e10
+SETUVAR __fish_initialized:4300
+SETUVAR fish_user_paths:/home/lexo/\x2elocal/bin\x1e/home/lexo/\x2elocal/share/gem/ruby/3\x2e4\x2e0/bin\x1e/root/\x2elocal/share/gem/ruby/3\x2e4\x2e0/bin

@@ -1,0 +1,113 @@
+/* ================================================
+   ROFI CHEATSHEET — GRUVBOX MATERIAL DARK
+   ================================================ */
+
+* {
+    bg0:     #1d2021;
+    bg1:     #282828;
+    bg2:     #3c3836;
+    fg:      #ebdbb2;
+    fg-dim:  #a89984;
+    green:   #a9b665;
+    yellow:  #d8a657;
+    blue:    #7daea3;
+    red:     #ea6962;
+    purple:  #d3869b;
+    orange:  #e78a4e;
+
+    font:                   "JetBrainsMono Nerd Font 12";
+    background-color:       transparent;
+    text-color:             @fg;
+}
+
+window {
+    background-color:   @bg0;
+    border:             1px;
+    border-color:       @bg2;
+    border-radius:      10px;
+    width:              860px;
+    height:             580px;
+    padding:            0;
+}
+
+mainbox {
+    background-color:   transparent;
+    children:           [ inputbar, message, listview ];
+    spacing:            0;
+}
+
+inputbar {
+    background-color:   @bg1;
+    border-radius:      10px 10px 0 0;
+    border:             0 0 1px 0;
+    border-color:       @bg2;
+    padding:            14px 20px;
+    children:           [ prompt, entry ];
+    spacing:            10px;
+}
+
+prompt {
+    background-color:   transparent;
+    text-color:         @green;
+    font:               "JetBrainsMono Nerd Font Bold 13";
+}
+
+entry {
+    background-color:   transparent;
+    text-color:         @fg;
+    placeholder:        "Buscar atajo...";
+    placeholder-color:  @fg-dim;
+}
+
+message {
+    background-color:   @bg1;
+    border:             0 0 1px 0;
+    border-color:       @bg2;
+    padding:            6px 20px;
+}
+
+textbox {
+    background-color:   transparent;
+    text-color:         @yellow;
+    font:               "JetBrainsMono Nerd Font Bold 11";
+}
+
+listview {
+    background-color:   transparent;
+    padding:            8px;
+    spacing:            2px;
+    columns:            1;
+    lines:              12;
+    scrollbar:          false;
+    fixed-height:       true;
+}
+
+element {
+    background-color:   transparent;
+    border-radius:      6px;
+    padding:            6px 12px;
+    spacing:            0;
+    children:           [ element-text ];
+}
+
+element selected {
+    background-color:   @bg2;
+}
+
+element-text {
+    background-color:   transparent;
+    text-color:         inherit;
+    font:               "JetBrainsMono Nerd Font 12";
+}
+
+element normal normal {
+    text-color: @fg;
+}
+
+element normal active {
+    text-color: @blue;
+}
+
+element selected normal {
+    text-color: @yellow;
+}
