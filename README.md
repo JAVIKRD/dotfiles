@@ -25,3 +25,67 @@ El script revisa dependencias, avisa qué falta, y copia las configuraciones a `
 - Dunst
 - Rofi
 - Starship prompt
+
+## Atajos de teclado
+
+### Apps
+| Atajo | Acción |
+|---|---|
+| `SUPER + Return` | Abrir terminal (kitty) |
+| `SUPER + D` | Launcher (wofi) |
+| `SUPER + B` | Abrir Firefox |
+| `SUPER + E` | Abrir explorador de archivos (thunar) |
+| `SUPER + SHIFT + Return` | Abrir VS Code |
+
+### Ventanas
+| Atajo | Acción |
+|---|---|
+| `SUPER + Q` | Cerrar ventana |
+| `SUPER + SHIFT + E` | Salir de Hyprland |
+| `SUPER + F` / `SUPER + SHIFT + F` | Pantalla completa |
+| `SUPER + Space` | Modo flotante |
+| `SUPER + P` | Modo pseudo |
+| `SUPER + J` | Alternar split |
+| `SUPER + Tab` | Ciclar entre ventanas |
+
+### Foco y movimiento (vim-style)
+| Atajo | Acción |
+|---|---|
+| `SUPER + H/J/K/L` | Mover foco (izq/abajo/arriba/der) |
+| `SUPER + SHIFT + H/J/K/L` | Mover ventana |
+| `SUPER + CTRL + H/J/K/L` | Redimensionar ventana |
+
+### Workspaces
+| Atajo | Acción |
+|---|---|
+| `SUPER + 0-9` | Ir al workspace 1-10 |
+| `SUPER + SHIFT + 0-9` | Mover ventana al workspace 1-10 |
+| `SUPER + S` | Workspace especial ("magic") |
+| `SUPER + SHIFT + S` | Mover ventana al workspace especial |
+| `SUPER + scroll` | Cambiar de workspace con el mouse |
+
+### Capturas y portapapeles
+| Atajo | Acción |
+|---|---|
+| `Print` | Copiar captura de área |
+| `SHIFT + Print` | Copiar captura de pantalla completa |
+| `SUPER + Print` / `CTRL + ALT + S` | Capturar área y guardar en `~/Pictures/Screenshots` |
+| `SUPER + V` | Historial del portapapeles (cliphist) |
+
+### Sistema
+| Atajo | Acción |
+|---|---|
+| `SUPER + M` | Bloquear pantalla |
+| `SUPER + N` | Cerrar todas las notificaciones |
+| `SUPER + SHIFT + N` | Reabrir última notificación |
+| `SUPER + F1` | Ver cheatsheet de atajos |
+| `SUPER + W` | Menú de red |
+
+### Multimedia (teclas especiales)
+| Atajo | Acción |
+|---|---|
+| `Volumen +/-` | Subir/bajar volumen |
+| `Mute` | Silenciar audio |
+| `Mic Mute` | Silenciar micrófono |
+| `Brillo +/-` | Subir/bajar brillo |
+| `Play/Pausa`, `Next`, `Prev` | Control de reproducción multimedia |
