@@ -1,6 +1,6 @@
 # dotfiles
 
-Mi configuración de Arch Linux — Hyprland, Waybar, Fish, Kitty y más.
+Mi configuración de Arch Linux modificada de mi amigo lexo — Hyprland, Waybar, Fish, Kitty y más.
 
 ![screenshot](assets/screenshot.png)
 
