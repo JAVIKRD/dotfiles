@@ -58,8 +58,26 @@ El script revisa dependencias, avisa qué falta, y copia las configuraciones a `
 ### Workspaces
 | Atajo | Acción |
 |---|---|
-| `SUPER + 0-9` | Ir al workspace 1-10 |
-| `SUPER + SHIFT + 0-9` | Mover ventana al workspace 1-10 |
+| `SUPER + 1` | Ir al workspace 1 |
+| `SUPER + 2` | Ir al workspace 2 |
+| `SUPER + 3` | Ir al workspace 3 |
+| `SUPER + 4` | Ir al workspace 4 |
+| `SUPER + 5` | Ir al workspace 5 |
+| `SUPER + 6` | Ir al workspace 6 |
+| `SUPER + 7` | Ir al workspace 7 |
+| `SUPER + 8` | Ir al workspace 8 |
+| `SUPER + 9` | Ir al workspace 9 |
+| `SUPER + 0` | Ir al workspace 10 |
+| `SUPER + SHIFT + 1` | Mover ventana al workspace 1 |
+| `SUPER + SHIFT + 2` | Mover ventana al workspace 2 |
+| `SUPER + SHIFT + 3` | Mover ventana al workspace 3 |
+| `SUPER + SHIFT + 4` | Mover ventana al workspace 4 |
+| `SUPER + SHIFT + 5` | Mover ventana al workspace 5 |
+| `SUPER + SHIFT + 6` | Mover ventana al workspace 6 |
+| `SUPER + SHIFT + 7` | Mover ventana al workspace 7 |
+| `SUPER + SHIFT + 8` | Mover ventana al workspace 8 |
+| `SUPER + SHIFT + 9` | Mover ventana al workspace 9 |
+| `SUPER + SHIFT + 0` | Mover ventana al workspace 10 |
 | `SUPER + S` | Workspace especial ("magic") |
 | `SUPER + SHIFT + S` | Mover ventana al workspace especial |
 | `SUPER + scroll` | Cambiar de workspace con el mouse |
