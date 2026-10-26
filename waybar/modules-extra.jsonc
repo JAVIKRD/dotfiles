@@ -1,16 +1,16 @@
 {
     "cpu": {
-        "format": "<span color='#f7768e' size='large'>\uf4bc</span> {usage}%",
+        "format": "<span color='#f7768e'>\uf4bc</span> {usage}%",
         "interval": 2,
         "tooltip": false
     },
     "memory": {
-        "format": "<span color='#7aa2f7' size='large'>\uf538</span> {percentage}%",
+        "format": "<span color='#7aa2f7'>\uf538</span> {percentage}%",
         "interval": 2,
         "tooltip": false
     },
     "custom/gpu": {
-        "format": "<span color='#73daca' size='large'>\udb82\udcae</span> {}%",
+        "format": "<span color='#73daca'>\udb82\udcae</span> {}%",
         "exec": "~/.config/waybar/scripts/gpu.sh",
         "interval": 2,
         "tooltip": false

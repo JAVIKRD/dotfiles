@@ -210,12 +210,12 @@ tooltip {
 
 
 /* ── ICONOS ── */
-#cpu, #memory, #custom-gpu { font-size: 14px; }
-#bluetooth, #network, #pulseaudio { font-size: 15px; padding: 4px 8px; }
+#cpu, #memory, #custom-gpu { font-size: 13px; }
+#bluetooth, #network, #pulseaudio { font-size: 13px; padding: 4px 8px; }
 #bluetooth { color: #7aa2f7; }
 #network { color: #73daca; }
 #pulseaudio { color: #bb9af7; }
-#custom-arch { font-size: 20px; color: #7aa2f7; }
+#custom-arch { font-size: 18px; color: #7aa2f7; }
 #custom-target { color: #f7768e; }
 #taskbar button { padding: 0 6px; }
 #taskbar button:hover { background: rgba(122, 162, 247, 0.18); }
