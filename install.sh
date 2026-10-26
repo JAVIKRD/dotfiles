@@ -26,6 +26,8 @@ declare -A DEP_PACKAGES=(
   [blueman-manager]=blueman
   [pavucontrol]=pavucontrol
   [hyprpaper]=hyprpaper
+  [playerctl]=playerctl
+  [spotify-launcher]=spotify-launcher
 )
 
 check_deps() {
@@ -103,6 +105,7 @@ main() {
   echo "Instalando dotfiles desde $DOTFILES_DIR"
   echo ""
   check_deps
+  echo "[i] Desde el AUR instala: mpvpaper spicetify-bin spicetify-marketplace-bin (yay -S ...)"
   install_configs
   install_wallpapers
   echo ""

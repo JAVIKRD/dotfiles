@@ -25,6 +25,13 @@ El script revisa dependencias, avisa qué falta, y copia las configuraciones a `
 - Dunst
 - Rofi
 - Starship prompt
+- Fondo de video animado (mpvpaper)
+- Waybar con CPU, RAM, GPU y Spotify
+- Spicetify (tema de Spotify)
+
+## Dependencias extra
+
+Desde el AUR: `mpvpaper` (fondo de video), `spicetify-bin` y `spicetify-marketplace-bin` (tema de Spotify). También `spotify-launcher`, `playerctl` y `starship`.
 
 ## Atajos de teclado
 

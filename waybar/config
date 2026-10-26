@@ -42,7 +42,7 @@
 
     "custom/arch": {
         "format": "󰣇 ",
-        "on-click": "~/.config/waybar/scripts/menu.sh",
+        "on-click": "/home/javikrd/.config/waybar/scripts/menu.sh",
         "tooltip": false
     },
     "custom/vpn": {
