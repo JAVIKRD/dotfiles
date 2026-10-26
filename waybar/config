@@ -1,7 +1,7 @@
 {
     "layer": "top",
     "position": "top",
-    "height": 28,
+    "height": 24,
     "spacing": 0,
     "margin-top": 4,
     "margin-left": 8,
@@ -63,7 +63,7 @@
 
     "wlr/taskbar": {
         "format": "{icon}",
-        "icon-size": 20,
+        "icon-size": 17,
         "tooltip": true,
         "tooltip-format": "{title}",
         "on-click": "activate",
@@ -126,7 +126,7 @@
     },
 
     "tray": {
-        "icon-size": 16,
+        "icon-size": 14,
         "spacing": 6
     }
 }

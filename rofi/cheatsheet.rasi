@@ -3,16 +3,16 @@
    ================================================ */
 
 * {
-    bg0:     #1d2021;
-    bg1:     #282828;
-    bg2:     #3c3836;
-    fg:      #ebdbb2;
-    fg-dim:  #a89984;
-    green:   #a9b665;
-    yellow:  #d8a657;
-    blue:    #7daea3;
-    red:     #ea6962;
-    purple:  #d3869b;
+    bg0:     #050505;
+    bg1:     #15161e;
+    bg2:     #1a1b26;
+    fg:      #c0caf5;
+    fg-dim:  #565f89;
+    green:   #7aa2f7;
+    yellow:  #73daca;
+    blue:    #7aa2f7;
+    red:     #f7768e;
+    purple:  #bb9af7;
     orange:  #e78a4e;
 
     font:                   "JetBrainsMono Nerd Font 12";

@@ -6,7 +6,7 @@
   border: none;
   border-radius: 0;
   font-family: "JetBrainsMono Nerd Font", monospace;
-  font-size: 12px;
+  font-size: 11px;
   min-height: 0;
 }
 
@@ -40,7 +40,7 @@ window#waybar {
 
 #workspaces button.active {
   color: #ebdbb2;
-  font-size: 12px;
+  font-size: 11px;
 }
 
 #workspaces button.occupied {
@@ -56,7 +56,7 @@ window#waybar {
 /* ── CLOCK ── */
 #clock {
   color: #a89984;
-  font-size: 12px;
+  font-size: 11px;
   padding: 4px 8px;
 }
 
@@ -210,12 +210,12 @@ tooltip {
 
 
 /* ── ICONOS ── */
-#cpu, #memory, #custom-gpu { font-size: 13px; }
-#bluetooth, #network, #pulseaudio { font-size: 13px; padding: 4px 8px; }
+#cpu, #memory, #custom-gpu { font-size: 12px; }
+#bluetooth, #network, #pulseaudio { font-size: 12px; padding: 4px 8px; }
 #bluetooth { color: #7aa2f7; }
 #network { color: #73daca; }
 #pulseaudio { color: #bb9af7; }
-#custom-arch { font-size: 18px; color: #7aa2f7; }
+#custom-arch { font-size: 16px; color: #7aa2f7; }
 #custom-target { color: #f7768e; }
 #taskbar button { padding: 0 6px; }
 #taskbar button:hover { background: rgba(122, 162, 247, 0.18); }
