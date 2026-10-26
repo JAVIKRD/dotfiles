@@ -17,7 +17,7 @@
     progress_bar_frame_width = 1
     progress_bar_min_width = 150
     progress_bar_max_width = 300
-    progress_bar_corner_radius = 4
+    progress_bar_corner_radius = 0
 
     indicate_hidden = yes
     transparency = 8
@@ -26,7 +26,7 @@
     horizontal_padding = 12
     text_icon_padding = 10
     frame_width = 1
-    frame_color = "#3c3836"
+    frame_color = "#928374"
     gap_size = 6
     separator_color = frame
     sort = yes
@@ -59,7 +59,7 @@
     always_run_script = true
     title = Dunst
     class = Dunst
-    corner_radius = 8
+    corner_radius = 0
     ignore_dbusclose = false
     force_xwayland = false
     force_xinerama = false
@@ -73,18 +73,18 @@
 
 # ── URGENCY LEVELS ─────────────────────────────
 [urgency_low]
-    background = "#1d2021"
+    background = "#1d2021cc"
     foreground = "#a89984"
     highlight = "#a9b665"
-    frame_color = "#3c3836"
+    frame_color = "#928374"
     timeout = 4
     icon = dialog-information
 
 [urgency_normal]
-    background = "#282828"
+    background = "#282828cc"
     foreground = "#ebdbb2"
     highlight = "#a9b665"
-    frame_color = "#504945"
+    frame_color = "#928374"
     timeout = 6
     icon = dialog-information
 
@@ -107,4 +107,8 @@
 
 [discord]
     appname = "discord"
+    background = "#3c3836dd"
+    foreground = "#ebdbb2"
+    icon_position = right
+    frame_color = "#928374"
     highlight = "#d3869b"

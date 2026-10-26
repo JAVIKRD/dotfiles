@@ -190,3 +190,20 @@ tooltip {
   color: #ea6962;
   padding: 4px 8px;
 }
+
+/* ── SISTEMA ── */
+#cpu, #memory, #custom-gpu {
+  color: #a89984;
+  padding: 4px 8px;
+}
+
+/* ── SPOTIFY ── */
+#mpris {
+  color: #a9b665;
+  padding: 4px 12px;
+}
+
+#mpris.paused {
+  color: #7c6f64;
+}
+

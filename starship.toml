@@ -1,34 +1,54 @@
-# ── STARSHIP CONFIG — lexo0x00 ───────────────────
-format = "$username$hostname $directory$status$character"
+# ── STARSHIP CONFIG — JAVIKRD ───────────────────
+add_newline = true
+
+format = """
+[╭─](#7aa2f7) ${custom.user} [\\[on\\]](#928374) $directory
+[╰─](#7aa2f7) $status$character"""
+
+[env_var.BOX]
+variable = "BOX"
+default = "htb"
+style = "bold fg:#1d2021 bg:#d8a657"
+format = "[ \uf120 $env_value ]($style)"
+
+[env_var.LAB]
+variable = "LAB"
+default = "exegol"
+style = "bold fg:#1d2021 bg:#fe8019"
+format = "[ \uf1b2 $env_value ]($style)"
 
 [username]
 show_always = true
-style_user = "green"
-format = "[$user]($style)"
+style_user = "bold #f7768e"
+style_root = "bold #ea6962"
+format = "[ $user ]($style)"
 
 [hostname]
 ssh_only = false
-style = "white"
-format = "[@$hostname]($style)"
+style = "bold #ebdbb2"
+format = "[$hostname]($style)"
 
 [directory]
-style = "white"
+style = "bold #73daca"
 truncation_length = 3
 truncate_to_repo = false
 format = "[$path]($style)"
 
 [status]
 disabled = false
-style = "red"
+style = "bold #ea6962"
 format = "[$status]($style) "
 
 [character]
-success_symbol = "[>](white)"
-error_symbol = "[>](red)"
+success_symbol = "[>>](bold #7aa2f7)"
+error_symbol = "[>>](bold #ea6962)"
 
 [python]
 disabled = true
-[git_branch]
-disabled = true
-[git_status]
-disabled = true
+
+[custom.user]
+command = "whoami | tr a-z A-Z"
+when = "true"
+format = "[$output]($style)"
+style = "bold #f7768e"
+

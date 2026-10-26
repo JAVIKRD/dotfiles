@@ -8,11 +8,15 @@
     "margin-right": 8,
     "exclusive": true,
     "passthrough": false,
+    "include": ["/home/javikrd/.config/waybar/modules-extra.jsonc"],
 
     "modules-left": [
         "custom/arch",
         "clock",
-        "custom/target"
+        "custom/target",
+        "cpu",
+        "memory",
+        "custom/gpu"
     ],
  
     "custom/target": {
@@ -27,6 +31,7 @@
     ],
 
     "modules-right": [
+        "mpris",
         "custom/vpn",
         "bluetooth",
         "network",

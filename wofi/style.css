@@ -4,9 +4,9 @@
 
 window {
     margin: 0;
-    border: 1px solid #3c3836;
-    border-radius: 10px;
-    background-color: rgba(29, 32, 33, 0.95);
+    border: 1px solid #928374;
+    border-radius: 0;
+    background-color: rgba(29, 32, 33, 0.70);
     font-family: "JetBrainsMono Nerd Font";
     font-size: 14px;
     color: #ebdbb2;
@@ -15,8 +15,8 @@ window {
 #input {
     border: none;
     border-bottom: 1px solid #3c3836;
-    border-radius: 10px 10px 0 0;
-    background-color: rgba(40, 40, 40, 0.95);
+    border-radius: 0;
+    background-color: rgba(40, 40, 40, 0.60);
     color: #ebdbb2;
     padding: 10px 14px;
     margin: 0;
@@ -53,13 +53,15 @@ window {
 }
 
 #entry {
+    border-left: 2px solid transparent;
     padding: 6px 12px;
-    border-radius: 6px;
+    border-radius: 0;
     margin: 2px 4px;
     background: transparent;
 }
 
 #entry:selected {
+    border-left: 2px solid #a9b665;
     background: rgba(169, 182, 101, 0.18);
     outline: none;
 }

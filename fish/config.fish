@@ -107,4 +107,3 @@ starship init fish | source
 set fish_greeting ""
 
 # Created by `pipx` on 2026-08-27 03:10:35
-set PATH $PATH /home/javikrd/.local/bin

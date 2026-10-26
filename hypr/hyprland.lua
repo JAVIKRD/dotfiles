@@ -4,7 +4,7 @@
 
 ---@module 'hl'
 
---    Lex0x00 Arch Linux Setup
+--    JAVIKRD Arch Linux Setup
 
 --#################################################
 
@@ -26,7 +26,7 @@ hl.env("__NV_PRIME_RENDER_OFFLOAD_PROVIDER", "NVIDIA-G0")
 
 hl.env("__VK_LAYER_NV_optimus", "NVIDIA_only")
 
-hl.env("AQ_DRM_DEVICES", "/dev/dri/card1:/dev/dri/card0")
+hl.env("AQ_DRM_DEVICES", "/dev/dri/card1")
 
 -- ── AUTOSTART ──────────────────────────────────
 
@@ -79,8 +79,8 @@ hl.config({
         resize_on_border = true,
         allow_tearing = false,
         col = {
-            active_border = { colors = { "rgb(a9b665)", "rgb(d8a657)" }, angle = 45 },
-            inactive_border = "rgb(3c3836)",
+            active_border = "rgb(928374)",
+            inactive_border = "rgb(928374)",
         },
     },
 })
@@ -91,7 +91,7 @@ hl.config({
     decoration = {
         rounding = 6,
         blur = {
-            enabled = true,
+            enabled = false,
             size = 6,
             passes = 3,
             noise = 0.02,
@@ -141,7 +141,7 @@ hl.animation({ leaf = "windows", enabled = true, speed = 2, bezier = "easeOut", 
 hl.animation({ leaf = "windowsOut", enabled = true, speed = 1.8, bezier = "easeOut", style = "popin 85%" })
 hl.animation({ leaf = "windowsMove", enabled = true, speed = 1.3, bezier = "easeInOut" })
 hl.animation({ leaf = "border", enabled = true, speed = 8, bezier = "ease" })
-hl.animation({ leaf = "borderangle", enabled = true, speed = 12, bezier = "ease", style = "loop" })
+hl.animation({ leaf = "borderangle", enabled = false, speed = 12, bezier = "ease", style = "loop" })
 hl.animation({ leaf = "fade", enabled = true, speed = 4, bezier = "easeOut" })
 hl.animation({ leaf = "workspaces", enabled = true, speed = 2.5, bezier = "easeOut", style = "slidefadevert 20%" })
 hl.animation({ leaf = "specialWorkspace", enabled = true, speed = 3.5, bezier = "easeOut", style = "slidevert" })
@@ -442,7 +442,7 @@ local editor = "code"
 
 -- Sistema
 
-hl.bind(mod .. " + " .. "Return", hl.dsp.exec_cmd("kitty"))
+hl.bind(mod .. " + " .. "Return", hl.dsp.exec_cmd(term))
 
 hl.bind(mod .. " + " .. "D", hl.dsp.exec_cmd("wofi --show drun"))
 
@@ -472,7 +472,7 @@ hl.bind(mod .. " + " .. "Tab", hl.dsp.window.cycle_next())
 
 -- Screenshots
 
-hl.bind("Print", hl.dsp.exec_cmd("grimblast copy area"))
+hl.bind("Print", hl.dsp.exec_cmd("flameshot gui"))
 
 hl.bind("SHIFT" .. " + " .. "Print", hl.dsp.exec_cmd("grimblast copy output"))
 
@@ -629,7 +629,7 @@ hl.config({
 -- Autostart
 hl.on("hyprland.start", function()
     hl.exec_cmd("waybar")
-    hl.exec_cmd("hyprpaper")
+    hl.exec_cmd("~/.config/hypr/scripts/video-wallpaper.sh")
     hl.exec_cmd("dunst")
     hl.exec_cmd("hypridle")
     hl.exec_cmd("systemd-run --user hyprpolkitagent")
@@ -637,6 +637,19 @@ hl.on("hyprland.start", function()
     hl.exec_cmd("wl-paste --type image --watch cliphist store")
     hl.exec_cmd("dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP")
     hl.exec_cmd("pkill -f xwaylandvideobridge")
-    hl.exec_cmd("swww-daemon")
-    hl.exec_cmd("swww img /home/javikrd/Pictures/Wallpapers/gruvbox_tux.png --transition-type wipe --transition-angle 30")
+    -- hl.exec_cmd("swww-daemon") -- swww no instalado, usando hyprpaper
+    -- (deshabilitado: swww no instalado, hyprpaper.conf ya define el wallpaper)
 end)
+
+-- Ignorar peticiones de maximizar (copiado del config por defecto)
+hl.window_rule({
+    name  = "suppress-maximize-events",
+    match = { class = ".*" },
+    suppress_event = "maximize",
+})
+
+hl.window_rule({ name = "spotify-opacity", match = { class = "(?i)^spotify$" }, opacity = "0.80 0.80" })
+
+hl.window_rule({ name = "spotify-ws8", match = { class = "(?i)^spotify$" }, workspace = "8 silent" })
+
+
