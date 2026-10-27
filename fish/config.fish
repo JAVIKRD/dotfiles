@@ -21,9 +21,9 @@ if status is-interactive
     alias remove='sudo pacman -Rns'
     alias search='pacman -Ss'
     alias aurinstall='yay -S'
-    alias hyprconf='nvim ~/.config/hypr/hyprland.conf'
-    alias fishconf='nvim ~/.config/fish/config.fish'
-    alias waybarconf='nvim ~/.config/waybar/config'
+    alias hyprconf='nano ~/.config/hypr/hyprland.lua'
+    alias fishconf='nano ~/.config/fish/config.fish'
+    alias waybarconf='nano ~/.config/waybar/config'
 
     # =============================
     # ALIASES — HTB / PENTEST
@@ -107,3 +107,6 @@ starship init fish | source
 set fish_greeting ""
 
 # Created by `pipx` on 2026-08-27 03:10:35
+
+
+

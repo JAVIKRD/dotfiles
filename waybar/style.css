@@ -1,222 +1,65 @@
-/* ================================================
-   WAYBAR — MINIMAL DARK
-   ================================================ */
-
+/* ── WAYBAR STYLE (TAMAÑO INTERMEDIO) ── */
 * {
-  border: none;
-  border-radius: 0;
-  font-family: "JetBrainsMono Nerd Font", monospace;
-  font-size: 11px;
-  min-height: 0;
+    border: none;
+    border-radius: 0;
+    font-family: "JetBrainsMono Nerd Font", "FiraCode Nerd Font", monospace;
+    font-size: 14px;
+    font-weight: bold;
+    min-height: 0;
 }
 
-window#waybar {
-  background: transparent;
-  color: #ebdbb2;
+window#waybar { 
+    background: rgba(29, 32, 33, 0.70); 
+    border-bottom: 1px solid rgba(60, 60, 60, 0.5);
 }
 
-.modules-left,
-.modules-center,
-.modules-right {
-  background: rgba(15, 15, 15, 0.85);
-  border-radius: 8px;
-  margin: 0 2px;
-  padding: 0 8px;
+.modules-left, .modules-center, .modules-right { 
+    background: transparent; 
+    padding: 1px 6px; 
 }
 
-/* ── WORKSPACES ── */
-#workspaces {
-  padding: 0 4px;
+/* Estilo base para los módulos */
+#custom-arch, #workspaces, #taskbar, #cava, #custom-vpn, #custom-target, #cpu, #memory, #custom-gpu, #temperature, #pulseaudio, #bluetooth, #network, #clock, #mpris, #tray, #custom-expand {
+    background: transparent;
+    border: none;
+    padding: 0 8px;
+    color: #e0e0e0;
 }
 
-#workspaces button {
-  padding: 0 5px;
-  color: #504945;
-  background: transparent;
-  font-size: 10px;
-  min-width: 0;
-  transition: all 0.15s ease;
+/* Colores y tamaños ajustados */
+#custom-arch { color: #7aa2f7; font-size: 24px; padding-right: 10px; }
+#custom-vpn { color: #a9b665; }
+#custom-target { color: #f85e7d; }
+#clock { color: #e0e0e0; }
+#mpris { color: #7daea3; }
+#cava { color: #7daea3; }
+#custom-expand { color: #7daea3; font-size: 14px; }
+
+/* Workspaces y Taskbar */
+#workspaces button { background: transparent; border: none; color: #7c7c7c; padding: 0 4px; font-size: 13px; }
+#workspaces button.active { color: #f85e7d; font-size: 15px; }
+#taskbar button { padding: 0 5px; }
+#taskbar button:hover { background: rgba(255, 255, 255, 0.08); border-radius: 4px; }
+#taskbar button.active { background: rgba(122, 162, 247, 0.35); border-radius: 4px; }
+#taskbar button.active image { -gtk-icon-transform: scale(1.3); }
+#taskbar button { transition: all 0.15s ease; }
+
+/* ── ESTILO MEJORADO PARA ICONOS ESPECÍFICOS ── */
+#pulseaudio, #bluetooth, #network, #cpu, #memory, #custom-gpu, #temperature {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 6px;
+    padding: 0 7px;
+    margin: 3px 2px;
 }
 
-#workspaces button.active {
-  color: #ebdbb2;
-  font-size: 11px;
-}
-
-#workspaces button.occupied {
-  color: #7c6f64;
-}
-
-#workspaces button:hover {
-  background: transparent;
-  color: #a89984;
-  box-shadow: none;
-}
-
-/* ── CLOCK ── */
-#clock {
-  color: #a89984;
-  font-size: 11px;
-  padding: 4px 8px;
-}
-
-/* ── UPDATES ── */
-#custom-updates {
-  color: #7c6f64;
-  padding: 4px 6px;
-}
-
-/* ── AUDIO ── */
-#pulseaudio {
-  color: #a89984;
-  padding: 4px 6px;
-}
-
-#pulseaudio.muted {
-  color: #504945;
-}
-
-/* ── NETWORK ── */
-#network {
-  color: #a89984;
-  padding: 4px 8px;
-  border-radius: 6px;
-  transition: all 0.15s ease;
-}
-#network:hover {
-  background: rgba(125, 174, 163, 0.12);
-  color: #7daea3;
-}
-#network.disconnected {
-  color: #504945;
-}
-#network.disconnected:hover {
-  color: #ea6962;
-  background: rgba(234, 105, 98, 0.1);
-}
-#network.linked {
-  color: #d8a657;
-}
-
-/* ── BLUETOOTH ── */
-#bluetooth {
-  color: #a89984;
-  padding: 4px 6px;
-}
-
-#bluetooth.off {
-  color: #504945;
-}
-
-/* ── BATTERY ── */
-#battery {
-  color: #a89984;
-  padding: 4px 8px;
-}
-
-#battery.warning:not(.charging) {
-  color: #d8a657;
-}
-
-#battery.critical:not(.charging) {
-  color: #ea6962;
-  animation: blink 0.6s linear infinite;
-}
-
-/* ── TRAY ── */
-#tray {
-  padding: 4px 6px;
-}
-
-#tray > .passive {
-  -gtk-icon-effect: dim;
-}
-
-/* ── TOOLTIP ── */
-tooltip {
-  background: #1d2021;
-  border: 1px solid #3c3836;
-  border-radius: 6px;
-  color: #ebdbb2;
-}
-
-@keyframes blink {
-  to {
-    opacity: 0.3;
-  }
-}
-
-#taskbar button {
-  padding: 0 4px;
-  background: transparent;
-  border: none;
-  border-radius: 6px;
-  transition: all 0.15s ease;
-}
-#taskbar button.active {
-  background: rgba(235, 219, 178, 0.1);
-}
-#taskbar button:hover {
-  background: rgba(235, 219, 178, 0.08);
-}
-
-#taskbar button tooltip {
-  background: #1d2021;
-  color: #ebdbb2;
-}
-
-#custom-arch {
-  color: #7daea3;
-  font-size: 16px;
-  padding: 4px 10px;
-}
-
-#custom-arch:hover {
-  color: #a9b665;
-  background: rgba(125, 174, 163, 0.12);
-  border-radius: 6px;
-}
-
-#custom-vpn {
-  color: #a9b665;
-  padding: 4px 8px;
-}
-
-#custom-vpn.novpn {
-  color: #504945;
-}
-
-#custom-target {
-  color: #ea6962;
-  padding: 4px 8px;
-}
-
-/* ── SISTEMA ── */
-#cpu, #memory, #custom-gpu {
-  color: #a89984;
-  padding: 4px 8px;
-}
-
-/* ── SPOTIFY ── */
-#mpris {
-  color: #a9b665;
-  padding: 4px 12px;
-}
-
-#mpris.paused {
-  color: #7c6f64;
+#pulseaudio:hover, #bluetooth:hover, #network:hover, #cpu:hover, #memory:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.15);
 }
 
 
-
-/* ── ICONOS ── */
-#cpu, #memory, #custom-gpu { font-size: 12px; }
-#bluetooth, #network, #pulseaudio { font-size: 12px; padding: 4px 8px; }
-#bluetooth { color: #7aa2f7; }
-#network { color: #73daca; }
-#pulseaudio { color: #bb9af7; }
-#custom-arch { font-size: 16px; color: #7aa2f7; }
-#custom-target { color: #f7768e; }
-#taskbar button { padding: 0 6px; }
-#taskbar button:hover { background: rgba(122, 162, 247, 0.18); }
+/* ── TOOLTIPS ── */
+tooltip { background: rgba(21, 22, 30, 0.95); border: 1px solid #414868; border-radius: 8px; }
+tooltip label { color: #c0caf5; padding: 2px 4px; }
 
